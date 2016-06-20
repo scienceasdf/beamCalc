@@ -89,7 +89,8 @@ void Widget::paintEvent(QPaintEvent* event)
 
 void Widget::on_pushButton_2_clicked()
 {
-    if ((ui->posText->text().toDouble()<0) || ui->posText_2->text().toDouble()<0)
+    if ((ui->posText->text().toDouble()<0 || ui->posText->text().toDouble()>beam1->leng) ||
+            ui->posText_2->text().toDouble()<0 || ui->posText_2->text().toDouble()>beam1->leng )
     {
         int ret=QMessageBox::information(this,"警告","非法位置输入",QMessageBox::Ok);
         return;
